@@ -1,0 +1,23 @@
+services:
+  backend:
+    image: paveltsaran/python-docker-test:latest
+    build: .
+    expose:
+      - "8000"
+    networks:
+      - app-network
+
+  frontend:
+    image: python-docker-test-frontend:latest
+    build: ./frontend
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

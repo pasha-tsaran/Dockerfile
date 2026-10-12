@@ -1,0 +1,27 @@
+:root { font-family: system-ui, sans-serif; color: #182b39; background: #f1f5f5; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1040px; margin: 0 auto; padding: 64px 24px; }
+header { margin-bottom: 32px; }
+.eyebrow { font-size: .75rem; letter-spacing: .15em; color: #11756f; font-weight: 700; }
+h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 12px 0; letter-spacing: -.04em; }
+header p, .muted { color: #536875; line-height: 1.6; }
+.layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 24px; }
+.card { padding: 28px; background: white; border: 1px solid #dce5e5; border-radius: 18px; min-width: 0; }
+h2 { font-size: 1.15rem; margin: 0 0 24px; }
+.numbers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+label { display: block; font-size: .9rem; font-weight: 600; margin-bottom: 20px; }
+input, select { width: 100%; margin-top: 8px; padding: 12px; border: 1px solid #a7b9c2; border-radius: 8px; background: white; color: inherit; font: inherit; }
+button { width: 100%; background: #11756f; color: white; border: 0; border-radius: 8px; padding: 14px; font: inherit; font-weight: 600; cursor: pointer; }
+button:hover { background: #095d58; }
+button:disabled { opacity: .6; cursor: wait; }
+:focus-visible { outline: 3px solid #e6ab3b; outline-offset: 3px; }
+.result { margin-top: 28px; padding: 22px; border-radius: 12px; background: #edf6f3; }
+.result span { color: #49645f; font-size: .85rem; }
+output { display: block; font-size: 2.8rem; font-weight: 700; overflow-wrap: anywhere; }
+.result p { margin-bottom: 0; color: #49645f; }
+.status { padding: 12px; border-radius: 8px; background: #edf6f3; color: #12634e; }
+.status.offline, .error { color: #a52b34; }
+.status.offline { background: #fff0f0; }
+pre { min-height: 160px; padding: 20px; background: #182b39; color: #d3eee4; border-radius: 12px; font-size: .85rem; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; }
+@media (max-width: 700px) { main { padding: 32px 16px; } .layout { grid-template-columns: 1fr; } .card { padding: 22px; } }

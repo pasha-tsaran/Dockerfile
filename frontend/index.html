@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Калькулятор · Docker + Flask</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <span class="eyebrow">DOCKER + FLASK</span>
+      <h1>Простой калькулятор</h1>
+      <p>Сложите или вычтите два числа — вычисление выполнит бэкенд.</p>
+    </header>
+    <div class="layout">
+      <section class="card" aria-labelledby="calculator-title">
+        <h2 id="calculator-title">Вычисление</h2>
+        <form id="calculator">
+          <div class="numbers">
+            <label>Первое число<input id="a" name="a" type="number" step="any" value="12" required></label>
+            <label>Второе число<input id="b" name="b" type="number" step="any" value="5" required></label>
+          </div>
+          <label>Операция
+            <select id="operation" name="operation">
+              <option value="add">Сложение (+)</option>
+              <option value="subtract">Вычитание (−)</option>
+            </select>
+          </label>
+          <button id="submit" type="submit">Вычислить</button>
+        </form>
+        <div class="result" aria-live="polite" aria-atomic="true">
+          <span>Результат</span>
+          <output id="result">—</output>
+          <p id="expression">Введите числа и нажмите «Вычислить».</p>
+        </div>
+        <p id="error" class="error" role="alert" hidden></p>
+      </section>
+      <section class="card" aria-labelledby="backend-title">
+        <h2 id="backend-title">Ответ бэкенда</h2>
+        <p id="status" class="status" role="status">Проверяем соединение…</p>
+        <p id="hostname" class="muted"></p>
+        <p class="muted">Здесь появится JSON с результатом вычисления.</p>
+        <pre id="response" aria-live="polite">Ожидаем запрос…</pre>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
